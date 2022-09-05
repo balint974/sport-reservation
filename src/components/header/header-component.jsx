@@ -6,6 +6,7 @@ import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 
 import Register from "../register/register-componenet";
 import LogIn from "../login/login-component";
+import { Link } from "react-router-dom";
 
 import logo from "../../assets/images/logo-1.png";
 
@@ -17,14 +18,12 @@ export const Header = ({ currentUser }) => (
 			<nav className="w-full mx-auto bg-white nav-bar">
 				<div className="container px-6 justify-between h-16 flex items-center lg:items-stretch mx-auto">
 					<div className="h-full flex items-center">
-						<a
-							href="/"
-							aria-label="Home"
-							role="img"
-							className="mr-10 flex items-center h-full"
+						<Link
+							to="/"
+							className="link mr-10 flex items-center h-full"
 						>
 							<img className="h-full" src={logo} alt="logo" />
-						</a>
+						</Link>
 						<div className="header_search">
 							<a
 								href="#search"
@@ -39,7 +38,9 @@ export const Header = ({ currentUser }) => (
 						<div className="h-full items-center justify-center user_actions flex flex-row ">
 							<div className="dashboard flex items-center gap-x-2 text-white cursor-pointer">
 								<FontAwesomeIcon icon={solid("user")} />
-								<a href="/dashboard">Panou de control</a>
+								<Link to="/dashboard" className="link">
+									Panou de control
+								</Link>
 							</div>
 							<div className="mx-6 text-white">
 								<FontAwesomeIcon icon={solid("grip-lines-vertical")} />
