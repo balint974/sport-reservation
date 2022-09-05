@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.2af625b3.css",
-    "main.js": "/static/js/main.f876ac97.js",
+    "main.js": "/static/js/main.a63d7f74.js",
     "static/js/787.544f9100.chunk.js": "/static/js/787.544f9100.chunk.js",
     "static/media/cluj-napoca.jpg": "/static/media/cluj-napoca.63561ffc138b89ed9a6f.jpg",
     "static/media/iasi.jpg": "/static/media/iasi.96dd5527fb779c899b38.jpg",
@@ -12,11 +12,11 @@
     "static/media/logo-1.png": "/static/media/logo-1.db6f27f626798fa515d1.png",
     "index.html": "/index.html",
     "main.2af625b3.css.map": "/static/css/main.2af625b3.css.map",
-    "main.f876ac97.js.map": "/static/js/main.f876ac97.js.map",
+    "main.a63d7f74.js.map": "/static/js/main.a63d7f74.js.map",
     "787.544f9100.chunk.js.map": "/static/js/787.544f9100.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2af625b3.css",
-    "static/js/main.f876ac97.js"
+    "static/js/main.a63d7f74.js"
   ]
 }
