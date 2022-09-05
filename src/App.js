@@ -62,7 +62,7 @@ class App extends Component {
 		return (
 			<>
 				{this.state.componentDidMount || this.state.currentUser ? (
-					<BrowserRouter>
+					<BrowserRouter basename="/sport-reservation">
 						<Routes>
 							<Route
 								exact
