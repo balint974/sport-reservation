@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/sport-reservation/static/css/main.f7a4c07b.css",
-    "main.js": "/sport-reservation/static/js/main.5fca55d8.js",
+    "main.js": "/sport-reservation/static/js/main.5c272c22.js",
     "static/js/787.544f9100.chunk.js": "/sport-reservation/static/js/787.544f9100.chunk.js",
     "static/media/cluj-napoca.jpg": "/sport-reservation/static/media/cluj-napoca.63561ffc138b89ed9a6f.jpg",
     "static/media/iasi.jpg": "/sport-reservation/static/media/iasi.96dd5527fb779c899b38.jpg",
@@ -12,11 +12,11 @@
     "static/media/logo-1.png": "/sport-reservation/static/media/logo-1.db6f27f626798fa515d1.png",
     "index.html": "/sport-reservation/index.html",
     "main.f7a4c07b.css.map": "/sport-reservation/static/css/main.f7a4c07b.css.map",
-    "main.5fca55d8.js.map": "/sport-reservation/static/js/main.5fca55d8.js.map",
+    "main.5c272c22.js.map": "/sport-reservation/static/js/main.5c272c22.js.map",
     "787.544f9100.chunk.js.map": "/sport-reservation/static/js/787.544f9100.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f7a4c07b.css",
-    "static/js/main.5fca55d8.js"
+    "static/js/main.5c272c22.js"
   ]
 }
