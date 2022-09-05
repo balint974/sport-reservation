@@ -2,7 +2,7 @@
   "name": "sport-reservation",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://balint974.github.io/sport-reservation",
+  "homepage": "https://balint974.github.io/sport-reservation-repo",
   "dependencies": {
     "@coreui/coreui": "^4.2.0",
     "@coreui/react": "^4.3.1",
