@@ -1,0 +1,31 @@
+.create_facility {
+    margin: 50px;
+
+    .title {
+        margin-bottom: 20px;
+    }
+
+    textarea {
+        border: 1px solid grey;
+        border-radius: 5px;
+        font-size: 20px;
+        padding: 3px;
+        margin-bottom: 20px;
+    }
+
+    input[type="submit"] {
+        margin-top: 50px;
+    }
+
+    label {
+        font-weight: 600;
+    }
+
+    label[for="images_upload"] {
+        margin-top: 15px;
+    }
+
+    label[for="fieldType"]+* {
+        text-align: left;
+    }
+}

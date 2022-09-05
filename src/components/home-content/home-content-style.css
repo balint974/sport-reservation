@@ -1,0 +1,126 @@
+.find__your_play {
+	padding: 50px 0;
+}
+
+.sport_cards {
+	margin: 30px 0;
+}
+
+.sport_cards .find_sport_card .card_image {
+	min-height: 300px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.sport_cards .find_sport_card:first-of-type .card_image {
+	background-image: url(../../assets/images/bacau.jpg);
+}
+
+.sport_cards .find_sport_card:nth-of-type(2) .card_image {
+	background-image: url(../../assets/images/iasi.jpg);
+}
+
+.sport_cards .find_sport_card:last-of-type .card_image {
+	background-image: url(../../assets/images/cluj-napoca.jpg);
+}
+
+.card_button {
+	margin-top: 10px;
+}
+
+.card_button a {
+	background-color: rgb(255, 193, 7);
+	padding: 10px 20px;
+	border-radius: 5px;
+	font-weight: 600;
+	text-transform: uppercase;
+	border: 1px solid rgb(255, 193, 7);
+}
+
+.card_button a:hover {
+	color: rgb(255, 193, 7);
+	background-color: white;
+}
+
+.check {
+	display: flex;
+	align-items: center;
+	padding: 5px 0;
+}
+
+.check svg {
+	color: #2a6c50;
+	font-size: 20px;
+}
+
+.check h4 {
+	margin-left: 5px;
+	color: white;
+	letter-spacing: 2px;
+}
+
+.section-title {
+	text-transform: uppercase;
+	padding: 30px 0;
+}
+
+.section-title h2 {
+	font-size: 36px;
+}
+
+.section-title h1 {
+	font-size: 56px;
+}
+
+.section-title h1,
+.section-title h2 {
+	font-weight: 900;
+	color: rgb(255, 193, 7);
+}
+
+.about_sport_reservation {
+	background-image: url(../../assets/images/field.jpg);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.about_sport_reservation .gradient_color {
+	padding: 80px 0;
+	background: linear-gradient(
+		120deg,
+		#1c3d44 20%,
+		rgba(42, 108, 80,.6) 65%,
+		rgba(47, 40, 90, 0) 65%
+	);
+}
+
+/* info section */
+
+.info_section {
+	padding: 50px 0;
+}
+.info_card svg {
+	font-size: 36px;
+}
+.info_card h2 {
+	margin-top: 10px;
+	padding-bottom: 5px;
+	margin-bottom: 15px;
+	text-transform: uppercase;
+    width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+.info_card h2::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #2a6c50;
+}

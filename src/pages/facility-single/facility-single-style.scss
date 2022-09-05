@@ -1,0 +1,14 @@
+.facility_images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin: 20px 0;
+
+    .facility_image {
+        height: 300px;
+        width: auto;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}

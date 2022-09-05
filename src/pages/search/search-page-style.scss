@@ -1,0 +1,13 @@
+.searchResults {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+
+    .resultImage {
+        height: 300px;
+        width: auto;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}

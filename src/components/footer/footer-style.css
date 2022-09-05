@@ -1,0 +1,16 @@
+.footer_logo{
+    max-width: 200px;
+}
+
+footer{
+    background-color: #2a6c50;
+    padding: 30px 0;
+}
+.social svg{
+    padding: 5px 10px;
+    border-radius: 79px;
+    margin: 10px;
+    height: 30px;
+    width: 20px;
+    box-shadow: 0px 0px 7px 0px #000000;
+}
