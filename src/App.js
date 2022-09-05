@@ -9,7 +9,7 @@ import logo from "./assets/images/logo-1.png";
 import { Homepage } from "./pages/homepage/homepage-component";
 import { Dashboard } from "./pages/dashboard/dashboard-component";
 import SearchPage from "./pages/search/search-page";
-import {FacilitySingle} from "./pages/facility-single/facility-single-page";
+import { FacilitySingle } from "./pages/facility-single/facility-single-page";
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import BarLoader from "react-spinners/BarLoader";
@@ -62,7 +62,7 @@ class App extends Component {
 		return (
 			<>
 				{this.state.componentDidMount || this.state.currentUser ? (
-					<BrowserRouter>
+					<BrowserRouter basename="/" >
 						<Routes>
 							<Route
 								exact
@@ -109,7 +109,9 @@ class App extends Component {
 							<Route
 								exact
 								path="/facility/:userId"
-								element={<FacilitySingle currentUser={this.state.currentUser} />}
+								element={
+									<FacilitySingle currentUser={this.state.currentUser} />
+								}
 							/>
 						</Routes>
 					</BrowserRouter>
