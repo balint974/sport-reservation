@@ -8,7 +8,7 @@ export const CreateUser = ({currentUser}) => (
 	<div className="create_user_container">
 		{String(currentUser.userRole) === "Administrator" ? (
 			<>
-				<h1>Creează utilizator (Customer)</h1>
+				<h1>Creează utilizator (Client)</h1>
 				<CreateUserForm />
 			</>
 		) : (

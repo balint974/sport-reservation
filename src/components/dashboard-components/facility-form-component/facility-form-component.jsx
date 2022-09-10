@@ -2,6 +2,7 @@ import React from "react";
 import Select from "react-select";
 import ImagesUpload from "../upload-images/upload-images-component";
 import GooglePlaces from "../../google-places/google-places-component";
+import { HorizontalRule } from "@mui/icons-material";
 import {
 	storage,
 	firestore,
@@ -30,6 +31,8 @@ class FacilityForm extends React.Component {
 			fieldImages: "",
 			fieldAddress: "",
 			fieldWorkingHours: "",
+			startHours: "",
+			endHours: "",
 		};
 	}
 
@@ -83,8 +86,6 @@ class FacilityForm extends React.Component {
 		this.state.authorId = authorId;
 
 		const facility = this.state;
-
-		console.log(facility);
 
 		try {
 			await createFacilityDocument(facility);
@@ -152,13 +153,27 @@ class FacilityForm extends React.Component {
 					<label className="mt-4" htmlFor="fieldWorkingHours">
 						Program
 					</label>
-					<input
-						type="text"
-						name="fieldWorkingHours"
-						value={this.state.fieldWorkingHours}
-						required
-						onChange={this.handleChange}
-					/>
+					<div className="active-hours flex items-center">
+						<input
+							type="text"
+							name="startHours"
+							value={this.state.startHours}
+							required
+							onChange={this.handleChange}
+							placeholder="Ora deschiderii (exemplu: 9)"
+							className="w-full"
+						/>
+						<div style={{marginBottom:"20px"}} className="w-20"><HorizontalRule className="icon"/></div>
+						<input
+							type="text"
+							name="endHours"
+							value={this.state.endHours}
+							required
+							onChange={this.handleChange}
+							placeholder="Ora închiderii (exemplu: 22)"
+							className="w-full"
+						/>
+					</div>
 
 					<label htmlFor="google_places">Adauga adresa</label>
 					<GooglePlaces

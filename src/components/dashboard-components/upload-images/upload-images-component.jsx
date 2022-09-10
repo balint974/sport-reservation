@@ -47,6 +47,7 @@ function ImagesUpload({ userId }) {
 				});
 				// window.location.reload();
 				console.log("Imagine stearsa!");
+				alert('Imagine stearsa!');
 			})
 			.catch((err) => {
 				console.log(err);

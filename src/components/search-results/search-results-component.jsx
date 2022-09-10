@@ -2,14 +2,16 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { firestore } from "../../assets/firebase/firebase.utils";
 import { Link } from "react-router-dom";
+import no_image from "../../assets/images/no-photo-available.png";
+import { Navigate } from "react-router-dom";
 
 export default function SearchResults({ searchState }) {
 	var fieldType = localStorage.getItem("fieldType");
+
 	// var fieldAddress = localStorage.getItem("fieldAddress");
 	fieldType = JSON.parse(fieldType);
 	// fieldAddress = JSON.parse(fieldAddress);
 
-	const queryFieldType = fieldType.value;
 	const [queryResults, setQueryResults] = useState(null);
 
 	useEffect(() => {
@@ -31,6 +33,12 @@ export default function SearchResults({ searchState }) {
 		});
 	}, []);
 
+	if (fieldType === null) {
+		return <Navigate to="/" />;
+	}
+
+	const queryFieldType = fieldType.value;
+
 	return (
 		<>
 			<div className="container mx-auto">
@@ -38,6 +46,7 @@ export default function SearchResults({ searchState }) {
 				<div className="searchResults my-20 ">
 					{queryResults
 						? queryResults.map((facility, index) => {
+								var image = facility.fieldImages[0] ?? no_image;
 								return (
 									<Link
 										key={index + 2}
@@ -47,7 +56,7 @@ export default function SearchResults({ searchState }) {
 									>
 										<div
 											style={{
-												backgroundImage: `url(${facility.fieldImages[0]})`,
+												backgroundImage: `url(${image})`,
 											}}
 											className="resultImage"
 											key={index}

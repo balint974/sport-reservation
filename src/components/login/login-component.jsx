@@ -24,7 +24,18 @@ class LogIn extends React.Component {
 			await auth.signInWithEmailAndPassword(email, password);
 			this.setState({ email: "", password: "" });
 		} catch (error) {
-			console.error(error);
+			if (
+				error.message ===
+				"Firebase: There is no user record corresponding to this identifier. The user may have been deleted. (auth/user-not-found)."
+			) {
+				alert("Contul introdus nu există!");
+			} else if (
+				error.message ===
+				"Firebase: The password is invalid or the user does not have a password. (auth/wrong-password)."
+			) {
+				alert("Parolă invalidă!");
+			}
+			console.error(error.message);
 		}
 	};
 

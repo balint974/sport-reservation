@@ -10,7 +10,7 @@ import {
 import { Link } from "react-router-dom";
 import React from "react";
 
-const Sidebar = ({currentUser}) => {
+const Sidebar = ({ currentUser }) => {
 	return (
 		<div className="sidebarComponent">
 			<div className="wrapper">
@@ -23,21 +23,26 @@ const Sidebar = ({currentUser}) => {
 								Acasă
 							</li>
 						</Link>
-						<Link to="/dashboard/bookings" className="link">
-							<li>
-								<CalendarMonth className="icon" />
-								Rezervări
-							</li>
-						</Link>
+
+						{currentUser.userRole === "Subscriber" ? (
+							<Link to="/dashboard/subscriber-bookings" className="link">
+								<li>
+									<CalendarMonth className="icon" />
+									Rezervări
+								</li>
+							</Link>
+						) : (
+							""
+						)}
 
 						{currentUser.userRole === "Administrator" ? (
 							<>
-								<Link to="/dashboard/users" className="link">
+								{/* <Link to="/dashboard/users" className="link">
 									<li>
 										<People className="icon" />
 										Utilizatori
 									</li>
-								</Link>
+								</Link> */}
 								<Link to="/dashboard/user/create" className="link">
 									<li>
 										<PersonAddAlt className="icon" />
@@ -50,12 +55,20 @@ const Sidebar = ({currentUser}) => {
 						)}
 
 						{currentUser.userRole === "Customer" ? (
-							<Link to="/dashboard/facility" className="link">
-								<li>
-									<Place className="icon" />
-									Facilitate sportiva
-								</li>
-							</Link>
+							<>
+								<Link to="/dashboard/pending-bookings" className="link">
+									<li>
+										<CalendarMonth className="icon" />
+										Rezervări
+									</li>
+								</Link>
+								<Link to="/dashboard/facility" className="link">
+									<li>
+										<Place className="icon" />
+										Facilitate sportiva
+									</li>
+								</Link>
+							</>
 						) : (
 							""
 						)}

@@ -27,7 +27,7 @@ class CreateUserForm extends React.Component {
 		const { name, email, companyName, password, confirmPassword } = this.state;
 
 		if (password !== confirmPassword) {
-			alert("Passwords don't match!");
+			alert("Parolele sunt diferite!");
 			return;
 		}
 

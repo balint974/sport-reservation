@@ -12,3 +12,22 @@
         background-repeat: no-repeat;
     }
 }
+
+.facility_login {
+    display: flex;
+    column-gap: 8px;
+    margin: 30px 0;
+    font-size: 18px;
+
+    button {
+        color: rgb(255, 193, 7);
+        font-weight: bold;
+    }
+}
+
+.error {
+    color: red;
+    margin: 30px 0;
+    font-size: 20px;
+    font-weight: 600;
+}

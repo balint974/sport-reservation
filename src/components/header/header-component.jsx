@@ -25,13 +25,13 @@ export const Header = ({ currentUser }) => (
 							<img className="h-full" src={logo} alt="logo" />
 						</Link>
 						<div className="header_search">
-							<a
+							{/* <a
 								href="#search"
 								className="flex items-center gap-x-2 text-white"
 							>
 								<FontAwesomeIcon icon={solid("magnifying-glass")} />
 								<div className="font-medium">SEARCH</div>
-							</a>
+							</a> */}
 						</div>
 					</div>
 					{currentUser ? (

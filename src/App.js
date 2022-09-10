@@ -103,6 +103,26 @@ class App extends Component {
 							/>
 							<Route
 								exact
+								path="/dashboard/pending-bookings"
+								element={
+									<Dashboard
+										currentUser={this.state.currentUser}
+										currentSubpage="pending-bookings"
+									/>
+								}
+							/>
+							<Route
+								exact
+								path="/dashboard/subscriber-bookings"
+								element={
+									<Dashboard
+										currentUser={this.state.currentUser}
+										currentSubpage="subscriber-bookings"
+									/>
+								}
+							/>
+							<Route
+								exact
 								path="/search"
 								element={<SearchPage currentUser={this.state.currentUser} />}
 							/>

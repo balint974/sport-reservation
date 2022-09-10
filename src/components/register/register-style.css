@@ -41,6 +41,7 @@ form input[type="submit"]{
 	background-color: rgb(255, 193, 7);
 	font-weight: 600;
 	text-transform: uppercase;
+	cursor: pointer;
 }
 
 .google-auth {

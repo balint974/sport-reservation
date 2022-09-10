@@ -14,11 +14,12 @@ const config = {
 
 const app = firebase.initializeApp(config);
 
-export const auth = firebase.auth();
+// export const auth = firebase.auth();
 export const storage = getStorage(app);
 export const firestore = firebase.firestore();
 export const db = app.firestore();
 
+export const auth = firebase.auth();
 const provider = new firebase.auth.GoogleAuthProvider();
 provider.setCustomParameters({ prompt: "select_account" });
 export const signInWithGoogle = () => auth.signInWithPopup(provider);
@@ -53,8 +54,6 @@ export const createFacilityDocument = async (facilityInfo) => {
 	const facilityRef = firestore.doc(`facilities/${facilityInfo.authorId}`);
 
 	const snapShot = await facilityRef.get();
-	console.log("here");
-	console.log(facilityInfo);
 
 	const {
 		authorId,
@@ -65,6 +64,8 @@ export const createFacilityDocument = async (facilityInfo) => {
 		fieldImages,
 		fieldAddress,
 		fieldWorkingHours,
+		startHours,
+		endHours,
 	} = facilityInfo;
 	const createdAt = new Date();
 
@@ -80,7 +81,10 @@ export const createFacilityDocument = async (facilityInfo) => {
 				fieldAddress,
 				fieldWorkingHours,
 				createdAt,
+				startHours,
+				endHours,
 			});
+			alert("Unitatea sportivă a fost adăugată!");
 		} catch (error) {
 			console.log("Error creating the facility", error.message);
 		}
@@ -95,13 +99,57 @@ export const createFacilityDocument = async (facilityInfo) => {
 				fieldImages,
 				fieldAddress,
 				fieldWorkingHours,
+				startHours,
+				endHours,
 			});
+			alert("Unitatea sportivă a fost actualizată!");
 		} catch (error) {
 			console.log("Error updating the facility", error.message);
 		}
 	}
 
 	return facilityRef;
+};
+
+export const createReservationEntry = async (reservationInfo) => {
+	const reservationRequestAt = new Date();
+	const name = reservationInfo.name;
+	const time = reservationInfo.time;
+	const date = reservationInfo.date;
+	const email = reservationInfo.email;
+	const userID = reservationInfo.currentUserId;
+	const formattedDate = reservationInfo.formattedDate;
+	const facilityData = reservationInfo.facilityData;
+	const aproved = false;
+
+	var reservationRef = "";
+
+	//add time to reservation date
+	date.setHours(0, 0, 0, 0);
+	date.setSeconds(date.getSeconds() + parseInt(time) * 3600);
+
+	try {
+		reservationRef = await firestore
+			.collection("facilities")
+			.doc(reservationInfo.facilityUserId)
+			.collection("reservations")
+			.doc()
+			.set({
+				userID,
+				name,
+				time,
+				date,
+				email,
+				reservationRequestAt,
+				aproved,
+				formattedDate,
+				facilityData,
+			});
+	} catch (error) {
+		console.log("Error creating the facility", error.message);
+	}
+
+	return reservationRef;
 };
 
 export const getFacilityDocumentByAuthorId = async (authorId) => {
