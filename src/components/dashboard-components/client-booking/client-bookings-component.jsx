@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { firestore } from "../../../assets/firebase/firebase.utils";
-import {updateDoc } from "firebase/firestore";
+import { query, where, updateDoc } from "firebase/firestore";
 import { Check } from "@mui/icons-material";
 
 import "./client-booking-style.scss";
@@ -16,7 +16,7 @@ const ClientBookings = ({ currentUser }) => {
 
 		const now = new Date();
 
-		const query = reservationsRef.where("date", ">=", now);
+		const query = reservationsRef.where("date", ">=", now).orderBy("date");
 
 		query
 			.get()
